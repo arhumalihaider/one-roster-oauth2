@@ -1,6 +1,6 @@
 module Oneroster
   # https://oneroster2.infinitecampus.org/campus/oneroster/entropyMaster/ims/oneroster/v1p1/
-  class AcademicSession
+  class AcademicSession < Oneroster::ApiBase
     get :all, "/academicSessions"
     get :find, "/academicSessions/:id"
   end
@@ -8,7 +8,7 @@ module Oneroster
     get :all, "/administrators", ignore_root: 'users'
     get :find, "/administrators/:id", ignore_root: 'users'
   end
-  class CampusVersion
+  class CampusVersion < Oneroster::ApiBase
     get :version, "/campusVersion"
   end
   class Category < Oneroster::ApiBase
@@ -30,7 +30,7 @@ module Oneroster
     get :find, "/courses/:id"
     get :classes, "/courses/:id/classes"
   end
-  class Demographic
+  class Demographic < Oneroster::ApiBase
     get :all, "/demographics"
     get :find, "/demographics/:id"
   end
@@ -58,11 +58,11 @@ module Oneroster
     get :student_result, "/lineitems/:id/students/:student_id/results/:result_id"
     put :student_result, "/lineitems/:id/students/:student_id/results/:result_id"
   end
-  class Org
+  class Org < Oneroster::ApiBase
     get :all, "/orgs"
     get :find, "/orgs/:id"
   end
-  class Relative
+  class Relative < Oneroster::ApiBase
     get :all, "/relatives"
     get :find, "/relatives/:id"
   end
@@ -92,7 +92,7 @@ module Oneroster
     get :all, "/scoreGroups", ignore_root: 'scoreGroups'
     get :find, "/scoreGroups/:id", ignore_root: 'scoreGroups'
   end
-  class StudentEnrollment
+  class StudentEnrollment < Oneroster::ApiBase
     get :all, "/studentEnrollments"
   end
   class Student < Oneroster::ApiBase
@@ -101,7 +101,7 @@ module Oneroster
     get :classes, "/student/:id/classes", ignore_root: 'users'
     get :results, "/student/:id/results", ignore_root: 'users'
   end
-  class TeacherEnrollment
+  class TeacherEnrollment < Oneroster::ApiBase
     get :all, "/teacherEnrollments"
   end
   class Teacher < Oneroster::ApiBase
