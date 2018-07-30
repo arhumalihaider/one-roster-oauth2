@@ -1,5 +1,5 @@
 module Oneroster
-  # https://oneroster2.infinitecampus.org/campus/oneroster/entropyMaster/ims/oneroster/v1p1/
+  # https://oneroster.infinitecampus.org/campus/oneroster/entropyMaster/ims/oneroster/v1p1/
   class AcademicSession < Oneroster::ApiBase
     get :all, "/academicSessions"
     get :find, "/academicSessions/:id"
