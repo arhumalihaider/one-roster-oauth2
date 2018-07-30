@@ -13,7 +13,7 @@ module Oneroster
       raise "No secret" if secret.blank?
     end
 
-    BASE_URL = 'https://oneroster2.infinitecampus.org/campus/oneroster/entropyMaster/ims/oneroster/v1p1/'
+    BASE_URL = 'https://oneroster.infinitecampus.org/campus/oneroster/entropyMaster/ims/oneroster/v1p1/'
     base_url BASE_URL
     def self.inherited(klass)
       super(klass)
