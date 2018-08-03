@@ -31,8 +31,8 @@ module Oneroster
     get :classes, "/courses/:id/classes"
   end
   class Demographic < Oneroster::ApiBase
-    get :all, "/demographics"
-    get :find, "/demographics/:id"
+    get :all, "/demographics", ignore_root: 'demographics'
+    get :find, "/demographics/:id", ignore_root: 'demographics'
   end
   class District < Oneroster::ApiBase
     get :all, "/districts", ignore_root: 'orgs'
