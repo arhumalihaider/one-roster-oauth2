@@ -50,13 +50,13 @@ module Oneroster
     get :find, "/guardians/:id", ignore_root: 'users'
   end
   class Lineitem < Oneroster::ApiBase
-    get :all, "/lineitems", ignore_root: 'lineitems'
-    delete :line_item, "/lineitems/:id"
-    get :find, "/lineitems/:id"
-    put :line_item, "/lineitems/:id"
-    delete :student_result, "/lineitems/:id/students/:student_id/results/:result_id"
-    get :student_result, "/lineitems/:id/students/:student_id/results/:result_id"
-    put :student_result, "/lineitems/:id/students/:student_id/results/:result_id"
+    get :all, "/lineItems", ignore_root: 'lineItems'
+    delete :line_item, "/lineItems/:id"
+    get :find, "/lineItems/:id"
+    put :line_item, "/lineItems/:id"
+    delete :student_result, "/lineItems/:id/students/:student_id/results/:result_id"
+    get :student_result, "/lineItems/:id/students/:student_id/results/:result_id"
+    put :student_result, "/lineItems/:id/students/:student_id/results/:result_id"
   end
   class Org < Oneroster::ApiBase
     get :all, "/orgs"
