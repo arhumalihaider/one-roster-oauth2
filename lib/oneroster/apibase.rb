@@ -48,7 +48,7 @@ module Oneroster
       
       request.headers['Authorization'] = req['Authorization']
       unless self.class.vendor_key.blank? && self.class.vendor_secret.blank?
-        request.headers['x-vendor-authorization'] = "#{self.class.vendor_key},#{self.class.vendor_secret}"
+        request.headers['x-vendor-authorization'] = "#{self.class.vendor_key}:#{self.class.vendor_secret}"
       end
     end
   end
