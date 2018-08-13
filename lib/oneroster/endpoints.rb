@@ -49,7 +49,7 @@ module Oneroster
     get :all, "/guardians", ignore_root: 'users'
     get :find, "/guardians/:id", ignore_root: 'users'
   end
-  class Lineitem < Oneroster::ApiBase
+  class LineItem < Oneroster::ApiBase
     get :all, "/lineItems", ignore_root: 'lineItems'
     delete :line_item, "/lineItems/:id"
     get :find, "/lineItems/:id"
