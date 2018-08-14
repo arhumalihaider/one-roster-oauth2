@@ -11,7 +11,7 @@ module Oneroster
       raise "No key" if key.blank?
       self.consumer_secret = secret
       raise "No secret" if secret.blank?
-      if vendor_key.blank? || vendor_secret.blank?
+      if (vendor_key.blank? && !vendor_key.nil?) || (vendor_secret.blank? && !vendor_secret.nil?)
         raise "Both vendor_key and vendor_secret are required only for Grading Services endpoints"
       end
       self.vendor_key = vendor_key
