@@ -6,6 +6,10 @@ module Oneroster
   class ApiBase < Flexirest::Base
     cattr_accessor :consumer_key, :consumer_secret, :vendor_key, :vendor_secret
 
+    # this are changable from the UI just like the base_url
+    VENDOR_KEY = "naiku_B2F50DD0"
+    VENDOR_SECRET = "5428E07353E6D58F849CCE4145BDA703"
+
     def self.api_auth_credentials(key, secret, vendor_key = nil, vendor_secret = nil)
       self.consumer_key = key
       raise "No key" if key.blank?
