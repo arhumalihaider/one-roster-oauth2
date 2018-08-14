@@ -10,7 +10,7 @@ module Oneroster
     VENDOR_KEY = "naiku_B2F50DD0"
     VENDOR_SECRET = "5428E07353E6D58F849CCE4145BDA703"
 
-    def self.api_auth_credentials(key, secret, vendor_key = nil, vendor_secret = nil)
+    def self.api_auth_credentials(key, secret, vendor_key = VENDOR_KEY, vendor_secret = VENDOR_SECRET)
       self.consumer_key = key
       raise "No key" if key.blank?
       self.consumer_secret = secret
