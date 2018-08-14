@@ -51,12 +51,12 @@ module Oneroster
   end
   class LineItem < Oneroster::ApiBase
     get :all, "/lineItems", ignore_root: 'lineItems'
-    delete :line_item, "/lineItems/:id"
+    delete :delete_line_item, "/lineItems/:id"
     get :find, "/lineItems/:id"
-    put :line_item, "/lineItems/:id"
-    delete :student_result, "/lineItems/:id/students/:student_id/results/:result_id"
+    put :update_line_item, "/lineItems/:id"
+    delete :delete_student_result, "/lineItems/:id/students/:student_id/results/:result_id"
     get :student_result, "/lineItems/:id/students/:student_id/results/:result_id"
-    put :student_result, "/lineItems/:id/students/:student_id/results/:result_id"
+    put :create_or_update_student_result, "/lineItems/:id/students/:student_id/results/:result_id"
   end
   class Org < Oneroster::ApiBase
     get :all, "/orgs"
