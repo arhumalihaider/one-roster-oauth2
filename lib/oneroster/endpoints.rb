@@ -106,8 +106,8 @@ module Oneroster
   end
   class Teacher < Oneroster::ApiBase
     get :all, "/teachers", ignore_root: 'users', timeout: 100
-    get :find, "/teacher/:id", ignore_root: 'user'
-    get :classes, "/teacher/:id/classes", timeout: 100
+    get :find, "/teachers/:id", ignore_root: 'user'
+    get :classes, "/teachers/:id/classes", timeout: 100
   end
   class Term < Oneroster::ApiBase
     get :all, "/terms", ignore_root: 'academicSessions'
