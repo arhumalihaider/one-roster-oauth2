@@ -22,6 +22,7 @@ module Oneroster
       self.vendor_secret = vendor_secret
     end
 
+
     BASE_URL = 'https://oneroster.infinitecampus.org/campus/oneroster/entropyMaster/ims/oneroster/v1p1/'
     base_url BASE_URL
     def self.inherited(klass)
