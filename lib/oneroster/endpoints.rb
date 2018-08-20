@@ -97,9 +97,9 @@ module Oneroster
   end
   class Student < Oneroster::ApiBase
     get :all, "/students", ignore_root: 'users'
-    get :find, "/student/:id", ignore_root: 'users'
-    get :classes, "/student/:id/classes", ignore_root: 'users'
-    get :results, "/student/:id/results", ignore_root: 'users'
+    get :find, "/students/:id", ignore_root: 'users'
+    get :classes, "/students/:id/classes", ignore_root: 'users'
+    get :results, "/students/:id/results", ignore_root: 'users'
   end
   class TeacherEnrollment < Oneroster::ApiBase
     get :all, "/teacherEnrollments"
