@@ -31,8 +31,8 @@ module Oneroster
     get :classes, "/courses/:id/classes"
   end
   class Demographic < Oneroster::ApiBase
-    get :all, "/demographics", ignore_root: 'demographics'
-    get :find, "/demographics/:id", ignore_root: 'demographics'
+    get :all, "/demographics", ignore_root: 'demographics', timeout: 10
+    get :find, "/demographics/:id", ignore_root: 'demographics', timeout: 10
   end
   class District < Oneroster::ApiBase
     get :all, "/districts", ignore_root: 'orgs'
@@ -73,19 +73,19 @@ module Oneroster
     put :result, "/results/:id", ignore_root: 'results'
   end
   class School < Oneroster::ApiBase
-    get :all, "/schools", ignore_root: 'orgs'
+    get :all, "/schools", ignore_root: 'orgs', timeout: 10
     get :find, "/schools/:id", ignore_root: 'org'
     get :administrators, "/schools/:id/administrators"
-    get :classes, "/schools/:id/classes", ignore_root: 'classes'
+    get :classes, "/schools/:id/classes", ignore_root: 'classes', timeout: 10
     get :class_enrollments, "/schools/:id/classes/:class_id/enrollments"
-    get :class_students, "/schools/:id/classes/:class_id/students"
-    get :class_teachers, "/schools/:id/classes/:class_id/teachers"
+    get :class_students, "/schools/:id/classes/:class_id/students", timeout: 10
+    get :class_teachers, "/schools/:id/classes/:class_id/teachers", timeout: 10
     get :courses, "/schools/:id/courses"
     get :enrollments, "/schools/:id/enrollments"
     get :student_enrollments, "/schools/:id/studentEnrollments"
-    get :students, "/schools/:id/students", ignore_root: 'users'
+    get :students, "/schools/:id/students", ignore_root: 'users', timeout: 10
     get :teacher_enrollments, "/schools/:id/teacherEnrollments"
-    get :teachers, "/schools/:id/teachers", ignore_root: 'users'
+    get :teachers, "/schools/:id/teachers", ignore_root: 'users', timeout: 10
     get :terms, "/schools/:id/terms"
   end
   class Scoregroup < Oneroster::ApiBase
@@ -96,18 +96,18 @@ module Oneroster
     get :all, "/studentEnrollments"
   end
   class Student < Oneroster::ApiBase
-    get :all, "/students", ignore_root: 'users'
+    get :all, "/students", ignore_root: 'users', timeout: 10
     get :find, "/students/:id", ignore_root: 'users'
-    get :classes, "/students/:id/classes", ignore_root: 'users'
-    get :results, "/students/:id/results", ignore_root: 'users'
+    get :classes, "/students/:id/classes", ignore_root: 'users', timeout: 10
+    get :results, "/students/:id/results", ignore_root: 'users', timeout: 10
   end
   class TeacherEnrollment < Oneroster::ApiBase
     get :all, "/teacherEnrollments"
   end
   class Teacher < Oneroster::ApiBase
-    get :all, "/teachers", ignore_root: 'users'
+    get :all, "/teachers", ignore_root: 'users', timeout: 10
     get :find, "/teacher/:id", ignore_root: 'user'
-    get :classes, "/teacher/:id/classes"
+    get :classes, "/teacher/:id/classes", timeout: 10
   end
   class Term < Oneroster::ApiBase
     get :all, "/terms", ignore_root: 'academicSessions'
@@ -116,8 +116,8 @@ module Oneroster
     get :grading_periods, "/terms/:id/gradingPeriods"
   end
   class User < Oneroster::ApiBase
-    get :all, "/users", ignore_root: 'users'
+    get :all, "/users", ignore_root: 'users', timeout: 10
     get :find, "/user/:id", ignore_root: 'users'
-    get :classes, "/user/:id/classes"
+    get :classes, "/user/:id/classes", timeout: 10
   end
 end
