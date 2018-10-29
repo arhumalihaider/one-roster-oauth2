@@ -69,8 +69,8 @@ module Oneroster
   class Result < Oneroster::ApiBase
     get :all, "/results", ignore_root: 'results'
     get :find, "/results/:id", ignore_root: 'results'
-    delete :result, "/results/:id", ignore_root: 'results'
-    put :result, "/results/:id", ignore_root: 'results'
+    delete :delete_result, "/results/:id", ignore_root: 'results'
+    put :update_result, "/results/:id", ignore_root: 'results'
   end
   class School < Oneroster::ApiBase
     get :all, "/schools", ignore_root: 'orgs', timeout: 100
