@@ -35,8 +35,7 @@ module Oneroster
     def set_authorization(name, request)
       consumer = OAuth2::Client.new( self.class.consumer_key, self.class.consumer_secret, {
         :site => self.class.base_url,
-        :signature_method => "HMAC-SHA256",
-        :scheme => 'header'
+        :auth_scheme => 'header'
       })
 
       timestamp = Time.now.to_i
@@ -51,9 +50,9 @@ module Oneroster
       end
       url = url.to_s
 
-      req = consumer.create_signed_request(request.method[:method], url, nil, options)
+
       
-      request.headers['Authorization'] = req['Authorization']
+
       unless self.class.vendor_key.blank? && self.class.vendor_secret.blank?
         request.headers['x-vendor-authorization'] = "#{self.class.vendor_key}:#{self.class.vendor_secret}"
       end
