@@ -35,7 +35,7 @@ module Oneroster
     def set_authorization(name, request)
       consumer = OAuth::Consumer.new( self.class.consumer_key, self.class.consumer_secret, {
         :site => self.class.base_url,
-        :signature_method => "HMAC-SHA1",
+        :signature_method => "HMAC-SHA256",
         :scheme => 'header'
       })
 
