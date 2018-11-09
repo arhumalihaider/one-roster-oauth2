@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
     "README"
   ]
   s.add_dependency 'flexirest'
-  s.add_dependency 'oauth'
+  s.add_dependency 'oauth2'
   s.add_dependency 'addressable'
   s.files = [
     "Gemfile",

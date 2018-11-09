@@ -1,4 +1,4 @@
-require 'oauth'
+require 'oauth2'
 require 'flexirest'
 require 'addressable'
 
@@ -33,7 +33,7 @@ module Oneroster
     before_request :set_authorization
 
     def set_authorization(name, request)
-      consumer = OAuth::Consumer.new( self.class.consumer_key, self.class.consumer_secret, {
+      consumer = OAuth2::Client.new( self.class.consumer_key, self.class.consumer_secret, {
         :site => self.class.base_url,
         :signature_method => "HMAC-SHA256",
         :scheme => 'header'
