@@ -1,18 +1,14 @@
 PATH
-  remote: .
-  specs:
-    oneroster (0.2)
-      addressable
-      flexirest
-<<<<<<< HEAD
-      oauth2
-=======
-
-PATH
   remote: ../oauth-ruby
   specs:
     oauth (0.5.5)
->>>>>>> sha256 on oauth version
+
+PATH
+  remote: .
+  specs:
+    oneroster (0.3)
+      addressable
+      flexirest
 
 GEM
   remote: https://rubygems.org/
