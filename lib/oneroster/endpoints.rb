@@ -14,6 +14,8 @@ module Oneroster
   class Category < Oneroster::ApiBase
     get :all, "/categories", ignore_root: 'categories'
     get :find, "/categories/:id", ignore_root: 'categories'
+    delete :delete_category, "/categories/:id", ignore_root: 'categories'
+    put :create_category, "/categories/:id", ignore_root: 'categories'
   end
   class Class < Oneroster::ApiBase
     get :all, "/classes", ignore_root: 'classes'
@@ -21,6 +23,7 @@ module Oneroster
     get :line_items, "/classes/:id/lineItems"
     get :line_item_results, "/classes/:id/lineItems/:line_item_id/results"
     get :results, "/classes/:id/results"
+    get :resources, "/classes/:id/resources"
     get :students, "/classes/:id/students", ignore_root: 'users'
     get :student_results, "/classes/:id/students/:student_id/results"
     get :teachers, "/classes/:id/teachers", ignore_root: 'users'
@@ -29,6 +32,7 @@ module Oneroster
     get :all, "/courses", ignore_root: 'courses'
     get :find, "/courses/:id"
     get :classes, "/courses/:id/classes"
+    get :resources, "/courses/:id/resources"
   end
   class Demographic < Oneroster::ApiBase
     get :all, "/demographics", ignore_root: 'demographics', timeout: 100
@@ -65,6 +69,10 @@ module Oneroster
   class Relative < Oneroster::ApiBase
     get :all, "/relatives"
     get :find, "/relatives/:id"
+  end
+  class Resource < Oneroster::ApiBase
+    get :all, "/resources", ignore_root: 'resources'
+    get :find, "/resources/:id", ignore_root: 'resources'
   end
   class Result < Oneroster::ApiBase
     get :all, "/results", ignore_root: 'results'
@@ -117,7 +125,7 @@ module Oneroster
   end
   class User < Oneroster::ApiBase
     get :all, "/users", ignore_root: 'users', timeout: 100
-    get :find, "/user/:id", ignore_root: 'users'
-    get :classes, "/user/:id/classes", timeout: 100
+    get :find, "/users/:id", ignore_root: 'users'
+    get :classes, "/users/:id/classes", timeout: 100
   end
 end
