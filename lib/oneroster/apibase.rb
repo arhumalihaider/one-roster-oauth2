@@ -41,18 +41,19 @@ module Oneroster
 
       timestamp = Time.now.to_i
       nonce = SecureRandom.uuid
-      options = {
-              :timestamp => timestamp,
-              :nonce => nonce
-      }
+      if consumer.http_method == :post || :put
+        options = {:timestamp => timestamp,:nonce => nonce, :oauth_callback => 'about:blank'}
+      else
+        options = {:timestamp => timestamp,:nonce => nonce}
+      end
       url = Addressable::URI.parse(request.url)
       if request.get_params.any?
         url.query_values = (url.query_values || {}).merge request.get_params
       end
-      url = url.to_s
+      url = url.normalize.to_s
       
-      req = consumer.create_signed_request(request.method[:method], url, nil, options)
-      
+      req = consumer.create_signed_request(consumer.http_method, url, nil, options)
+
       request.headers['Authorization'] = req['Authorization']
       unless self.class.vendor_key.blank? && self.class.vendor_secret.blank?
         request.headers['x-vendor-authorization'] = "#{self.class.vendor_key}:#{self.class.vendor_secret}"
