@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "oneroster"
-  s.version = "0.3.2.20"
+  s.version = "0.4.2.21"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thomas R. Koll", "Petar Risteski", "Filip Josimovski"]
@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   ]
   s.add_dependency 'flexirest'
   s.add_dependency 'addressable'
+  s.add_dependency 'byebug'
   s.files = [
     "Gemfile",
     "LICENSE",
