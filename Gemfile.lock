@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/risteskipetar/oauth-ruby.git
-  revision: 26a8c7777c229d4f32023485dda2e873b05e5270
+  revision: 050ae345847b81e5b5112d7dd7fd48779ed5a842
   branch: add-sha256
   specs:
     oauth (0.5.5.1)
@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    oneroster (0.4.2.21)
+    oneroster (0.4.2.22)
       addressable
       byebug
       flexirest
