@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/risteskipetar/oauth-ruby.git
-  revision: 050ae345847b81e5b5112d7dd7fd48779ed5a842
+  revision: 3248a0d1437ae8a80aba92769b73a65e7098335d
   branch: add-sha256
   specs:
-    oauth (0.5.5.1)
+    oauth (0.5.5.2)
 
 PATH
   remote: .
