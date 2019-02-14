@@ -54,7 +54,7 @@ module Oneroster
         url.query_values = (url.query_values || {}).merge request.get_params
       end
       url = url.normalize.to_s
-
+      debugger
       req = consumer.create_signed_request(request.method[:method], url, nil, options)
 
       request.headers['Authorization'] = req['Authorization']
