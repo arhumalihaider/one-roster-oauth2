@@ -1,14 +1,14 @@
 GIT
   remote: https://github.com/risteskipetar/oauth-ruby.git
-  revision: cba2d3dbe30b912d4c4e0b20393c78b9ad92c593
+  revision: ca14a1a3764c5aa64ddc7f020b3f8c35be66b316
   branch: add-sha256
   specs:
-    oauth (0.5.5.2)
+    oauth (0.5.5.3)
 
 PATH
   remote: .
   specs:
-    oneroster (0.4.2.23)
+    oneroster (0.4.2.30)
       addressable
       byebug
       flexirest
@@ -23,7 +23,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    byebug (10.0.2)
+    byebug (11.0.0)
     concurrent-ruby (1.1.4)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -34,7 +34,7 @@ GEM
       crack
       faraday
       multi_json
-    i18n (1.5.1)
+    i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     multi_json (1.13.1)
@@ -53,4 +53,4 @@ DEPENDENCIES
   oneroster!
 
 BUNDLED WITH
-   1.16.1
+   1.17.1

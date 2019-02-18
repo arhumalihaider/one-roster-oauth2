@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "oneroster"
-  s.version = "0.4.2.28"
+  s.version = "0.4.2.33"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thomas R. Koll", "Petar Risteski", "Filip Josimovski"]

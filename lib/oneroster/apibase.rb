@@ -66,9 +66,9 @@ module Oneroster
         # remove hash
         oauth_body_hash.pop
         # get post params
-        body = request.post_params.to_json
+        body = request.post_params
         # create a new hash and encrypt
-        new_oauth_body_hash = Base64.encode64(OpenSSL::Digest::SHA256.digest(body || '')).chomp.gsub(/\n/,'')
+        new_oauth_body_hash = Base64.encode64(OpenSSL::Digest::SHA256.digest(body.to_json || '')).chomp.gsub(/\n/,'')
         # add new hash back to the arrat
         oauth_body_hash.push CGI::escape(new_oauth_body_hash)
         # replace the old one with the new one
