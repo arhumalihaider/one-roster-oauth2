@@ -54,10 +54,30 @@ module Oneroster
         url.query_values = (url.query_values || {}).merge request.get_params
       end
       url = url.normalize.to_s
-      debugger
+
+      # create signed request
       req = consumer.create_signed_request(request.method[:method], url, nil, options)
 
-      request.headers['Authorization'] = req['Authorization']
+      if request.method[:method] == :put || request.method[:method] == :post
+        # get oauth body hash part to change the hash
+        oauth_body_hash_el = req['Authorization'].split(', ').find{|a| a.match /oauth_body_hash/}
+        # get the hash
+        oauth_body_hash = oauth_body_hash_el.split('"')
+        # remove hash
+        oauth_body_hash.pop
+        # get post params
+        body = request.post_params.to_json
+        # create a new hash and encrypt
+        new_oauth_body_hash = Base64.encode64(OpenSSL::Digest::SHA256.digest(body || '')).chomp.gsub(/\n/,'')
+        # add new hash back to the arrat
+        oauth_body_hash.push CGI::escape(new_oauth_body_hash)
+        # replace the old one with the new one
+        auth = req['Authorization'].gsub(req['Authorization'].split(', ').find{|a| a.match /oauth_body_hash/}, oauth_body_hash.join('"')+"\"")
+        request.headers['Authorization'] = auth
+      else
+        request.headers['Authorization'] = req['Authorization']
+      end
+      debugger
       # unless self.class.vendor_key.blank? && self.class.vendor_secret.blank?
       #   request.headers['x-vendor-authorization'] = "#{self.class.vendor_key}%3A#{self.class.vendor_secret}"
       # end
