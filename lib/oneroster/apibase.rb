@@ -8,8 +8,9 @@ module Oneroster
     cattr_accessor :consumer_key, :consumer_secret, :vendor_key, :vendor_secret
 
     # this are changable from the UI just like the base_url
-    VENDOR_KEY = "naiku_B2F50DD0"
-    VENDOR_SECRET = "5428E07353E6D58F849CCE4145BDA703"
+    
+    VENDOR_KEY = "naiku_3F8AEE12"
+    VENDOR_SECRET = "463FF562B1F1206B15C9390ABEBC9919"
 
     def self.api_auth_credentials(key, secret, vendor_key = VENDOR_KEY, vendor_secret = VENDOR_SECRET)
       self.consumer_key = key
