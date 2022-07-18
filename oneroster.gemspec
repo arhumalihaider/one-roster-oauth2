@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name = "oneroster"
-  s.version = "0.2.1"
+  s.version = "0.4.2.33"
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Thomas R. Koll"]
+  s.authors = ["Thomas R. Koll", "Petar Risteski", "Filip Josimovski"]
   s.date = "2016-10-28"
   s.description = "Provides a ruby interface to Infinite Campus OneRoster API"
   s.summary = "Provides a ruby interface to Infinite Campus OneRoster API"
@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
   ]
   s.add_dependency 'flexirest'
-  s.add_dependency 'oauth'
   s.add_dependency 'addressable'
+  s.add_dependency 'byebug'
   s.files = [
     "Gemfile",
     "LICENSE",
