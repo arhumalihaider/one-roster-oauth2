@@ -24,6 +24,7 @@ module Oneroster
     get :line_item_results, "/classes/:id/lineItems/:line_item_id/results"
     get :results, "/classes/:id/results"
     get :resources, "/classes/:id/resources"
+
     get :students, "/classes/:id/students", ignore_root: 'users'
     get :student_results, "/classes/:id/students/:student_id/results"
     get :teachers, "/classes/:id/teachers", ignore_root: 'users'
@@ -79,6 +80,8 @@ module Oneroster
     get :find, "/results/:id", ignore_root: 'results'
     delete :delete_result, "/results/:id", ignore_root: 'results'
     put :update_result, "/results/:id", ignore_root: 'results'
+    delete :result, "/results/:id", ignore_root: 'results'
+    put :result, "/results/:id", ignore_root: 'results'
   end
   class School < Oneroster::ApiBase
     get :all, "/schools", ignore_root: 'orgs', timeout: 100
@@ -127,5 +130,7 @@ module Oneroster
     get :all, "/users", ignore_root: 'users', timeout: 100
     get :find, "/users/:id", ignore_root: 'users'
     get :classes, "/users/:id/classes", timeout: 100
+    get :find, "/user/:id", ignore_root: 'users'
+    get :classes, "/user/:id/classes", timeout: 100
   end
 end

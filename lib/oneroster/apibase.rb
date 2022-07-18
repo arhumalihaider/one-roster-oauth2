@@ -7,6 +7,7 @@ module Oneroster
     cattr_accessor :consumer_key, :consumer_secret, :vendor_key, :vendor_secret
 
     # this are changable from the UI just like the base_url
+    
     VENDOR_KEY = "naiku_3F8AEE12"
     VENDOR_SECRET = "463FF562B1F1206B15C9390ABEBC9919"
 
